@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
+ <head>
+  <script>
+   <script>
+ $.ajax({
+    url: "https://ipinfo.io",
+    dataType: "jsonp",
+    success: function(res){
+         $(".ip-address").text(res.ip);
+    }
+});
+</script>
 <body>
 <h1>JavaScriptとPHPでIP取得</h1>
-const script = document.createElement('script');
- 
-script.src = 'https://ipinfo.io?callback=callback';
-document.body.appendChild(script);
-document.body.removeChild(script);
-</script>
-  function callback(data) {
- 
-    console.log(data.ip);
- 
-}
+
+<p>
+    あなたのIPは<a class="ip-address"></a>です。
+</p>
 </body>
 </html>
